@@ -9,7 +9,7 @@
       <p></p>
 	</div>
 	<div class="center">
-      <textarea v-model="comment" placeholder="your review here"></textarea>
+      <textarea v-model="comment" placeholder="What do you think of this website?"></textarea>
       <p></p>
 	</div>
 	<div class="center">
@@ -20,7 +20,7 @@
  <div class="post">
     <section class="review-post">
 	<div class="image" v-for="review in reviews" :key="review.id">
-		<h3>{{review.name}} <button @click="deleteReview(review)">Delete</button></h3>
+		<h3>{{review.name}}<span></span> <button @click="deleteReview(review)">Delete</button></h3>
 		<p>{{review.comment}}</p>
 	</div>  
   </section>
@@ -127,12 +127,15 @@ button {
 }
 
 .image {
-	display: flex;
 	text-align: center;
 	justify-content: center;
 }
 
 .center {
 	justify-content: center;
+}
+
+span  {
+        margin-left: 50px;
 }
 </style>
